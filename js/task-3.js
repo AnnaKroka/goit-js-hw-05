@@ -45,29 +45,116 @@
 // console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
 
 //-------------- TASK 3-4--------------------
-const profile = {
-    username: "Jacob",
-    playTime: 300,
+// const profile = {
+//     username: "Jacob",
+//     playTime: 300,
 
-    changeUsername(newName) {
-       this.username = newName;
-        },
+//     changeUsername(newName) {
+//        this.username = newName;
+//         },
 
-    updatePlayTime(hours) {
-       this.playTime += hours;
-        },
+//     updatePlayTime(hours) {
+//        this.playTime += hours;
+//         },
 
-    getInfo() {
-        return `${this.username} has ${this.playTime} active hours!`;
-    },
-};
+//     getInfo() {
+//         return `${this.username} has ${this.playTime} active hours!`;
+//     },
+// };
 
 
 
-console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+// console.log(profile.getInfo()); // "Jacob has 300 active hours!"
 
-profile.changeUsername("Marco");
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
+// profile.changeUsername("Marco");
+// console.log(profile.getInfo()); // "Marco has 300 active hours!"
 
-profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!"
+// profile.updatePlayTime(20);
+// console.log(profile.getInfo()); // "Marco has 320 active hours!"
+
+
+//-------------- TASK 3-5--------------------
+const sortByDescendingFriendCount = (users) => {
+
+    const friendsCount = users.toSorted((currentFriend, nextFriend) => {
+        return nextFriend.friends.length - currentFriend.friends.length;
+});
+return friendsCount;
+}
+
+console.log(
+    sortByDescendingFriendCount([
+      {
+        name: "Moore Hensley",
+        friends: ["Sharron Pace"],
+        gender: "male"
+      },
+      {
+        name: "Sharlene Bush",
+        friends: ["Briana Decker", "Sharron Pace"],
+        gender: "female"
+      },
+      {
+        name: "Ross Vazquez",
+        friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+        gender: "male"
+      },
+      {
+        name: "Elma Head",
+        friends: ["Goldie Gentry", "Aisha Tran"],
+        gender: "female"
+      },
+      {
+        name: "Carey Barr",
+        friends: ["Jordan Sampson", "Eddie Strong"],
+        gender: "male"
+      },
+      {
+        name: "Blackburn Dotson",
+        friends: ["Jacklyn Lucas", "Linda Chapman"],
+        gender: "male"
+      },
+      {
+        name: "Sheree Anthony",
+        friends: ["Goldie Gentry", "Briana Decker"],
+        gender: "female"
+      }
+    ])
+  );
+  // [
+  //   {
+  //     name: "Ross Vazquez",
+  //     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+  //     gender: "male"
+  //   },
+  //   {
+  //     name: "Sharlene Bush",
+  //     friends: ["Briana Decker", "Sharron Pace"],
+  //     gender: "female"
+  //   },
+  //   {
+  //     name: "Elma Head",
+  //     friends: ["Goldie Gentry", "Aisha Tran"],
+  //     gender: "female"
+  //   },
+  //   {
+  //     name: "Carey Barr",
+  //     friends: ["Jordan Sampson", "Eddie Strong"],
+  //     gender: "male"
+  //   },
+  //   {
+  //     name: "Blackburn Dotson",
+  //     friends: ["Jacklyn Lucas", "Linda Chapman"],
+  //     gender: "male"
+  //   },
+  //   {
+  //     name: "Sheree Anthony",
+  //     friends: ["Goldie Gentry", "Briana Decker"],
+  //     gender: "female"
+  //   },
+  //   {
+  //     name: "Moore Hensley",
+  //     friends: ["Sharron Pace"],
+  //     gender: "male"
+  //   }
+  // ]
